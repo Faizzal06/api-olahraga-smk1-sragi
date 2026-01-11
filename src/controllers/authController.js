@@ -48,7 +48,11 @@ const login = asyncHandler(async (req, res) => {
  * @access  Admin
  */
 const register = asyncHandler(async (req, res) => {
-    const { name, nis, email, password, role, class_id, avatar } = req.body;
+    const { name, password, role, class_id, avatar } = req.body;
+
+    // Normalize nis and email - treat empty strings as undefined
+    const nis = req.body.nis?.trim() || undefined;
+    const email = req.body.email?.trim() || undefined;
 
     // Validasi role-based requirements
     if (role === 'student' && !nis) {
@@ -74,16 +78,20 @@ const register = asyncHandler(async (req, res) => {
         }
     }
 
-    // Buat user baru
-    const user = await User.create({
+    // Build user data conditionally - omit null fields so sparse index works
+    const userData = {
         name,
-        nis: nis || null,
-        email: email ? email.toLowerCase() : null,
         password,
         role,
         class_id: class_id || null,
         avatar: avatar || null
-    });
+    };
+
+    // Only include nis/email if they have values (for sparse unique index)
+    if (nis) userData.nis = nis;
+    if (email) userData.email = email.toLowerCase();
+
+    const user = await User.create(userData);
 
     return successResponse(res, 201, 'User berhasil didaftarkan', {
         user: user.toPublicJSON()

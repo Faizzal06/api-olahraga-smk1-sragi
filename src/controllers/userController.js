@@ -77,7 +77,11 @@ const getUserById = asyncHandler(async (req, res) => {
  * @access  Admin
  */
 const createUser = asyncHandler(async (req, res) => {
-    const { name, nis, email, password, role, class_id, avatar } = req.body;
+    const { name, password, role, class_id, avatar } = req.body;
+
+    // Normalize nis and email - treat empty strings as undefined
+    const nis = req.body.nis?.trim() || undefined;
+    const email = req.body.email?.trim() || undefined;
 
     // Validasi role-based requirements
     if (role === 'student' && !nis) {
