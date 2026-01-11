@@ -103,15 +103,20 @@ const createUser = asyncHandler(async (req, res) => {
         }
     }
 
-    const user = await User.create({
+    // Build user data conditionally - omit null fields so sparse index works
+    const userData = {
         name,
-        nis: nis || null,
-        email: email ? email.toLowerCase() : null,
         password,
         role,
         class_id: class_id || null,
         avatar: avatar || null
-    });
+    };
+
+    // Only include nis/email if they have values (for sparse unique index)
+    if (nis) userData.nis = nis;
+    if (email) userData.email = email.toLowerCase();
+
+    const user = await User.create(userData);
 
     const createdUser = await User.findById(user._id)
         .select('-password')
@@ -148,10 +153,14 @@ const updateUser = asyncHandler(async (req, res) => {
         }
     }
 
-    // Update fields
+    // Update fields - use undefined instead of null for sparse-indexed fields
     if (name) user.name = name;
-    if (nis !== undefined) user.nis = nis || null;
-    if (email !== undefined) user.email = email ? email.toLowerCase() : null;
+    if (nis !== undefined) {
+        user.nis = nis || undefined; // undefined will remove the field
+    }
+    if (email !== undefined) {
+        user.email = email ? email.toLowerCase() : undefined;
+    }
     if (role) user.role = role;
     if (class_id !== undefined) user.class_id = class_id || null;
     if (avatar !== undefined) user.avatar = avatar || null;
