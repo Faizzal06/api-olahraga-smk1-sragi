@@ -67,11 +67,13 @@ app.use(notFound);
 // Global Error Handler
 app.use(errorHandler);
 
-// Start Server
+// Start Server (only in non-Vercel environment)
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`
+// Vercel handles the server itself, so we only listen when running locally
+if (process.env.VERCEL !== '1') {
+    app.listen(PORT, () => {
+        console.log(`
 ╔════════════════════════════════════════════════════════════════╗
 ║                                                                ║
 ║   🚀 Tracking Activity API Server                              ║
@@ -90,7 +92,9 @@ app.listen(PORT, () => {
 ║   • GET  /api/export/*        - Export Data                    ║
 ║                                                                ║
 ╚════════════════════════════════════════════════════════════════╝
-  `);
-});
+    `);
+    });
+}
 
+// Export for Vercel serverless function
 module.exports = app;
