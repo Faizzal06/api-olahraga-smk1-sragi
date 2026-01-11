@@ -1,7 +1,5 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
-
 // Import models
 const User = require('../src/models/User');
 const Class = require('../src/models/Class');
@@ -10,12 +8,6 @@ const Announcement = require('../src/models/Announcement');
 const AnnouncementRead = require('../src/models/AnnouncementRead');
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/tracking-activity';
-
-// Helper untuk hash password
-const hashPassword = async (password) => {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(password, salt);
-};
 
 // Seed data
 const seedDatabase = async () => {
@@ -56,32 +48,29 @@ const seedDatabase = async () => {
 
         // Create Admin
         console.log('👤 Creating admin...');
-        const adminPassword = await hashPassword('admin123');
         const admin = await User.create({
             name: 'Administrator',
             email: 'admin@sekolah.id',
-            password: adminPassword,
+            password: 'admin123',
             role: 'admin'
         });
         console.log('✅ Admin created: admin@sekolah.id / admin123');
 
-        // Create Teachers
+        // Create Teachers (using create one by one for pre-save hook)
         console.log('👨‍🏫 Creating teachers...');
-        const teacherPassword = await hashPassword('guru123');
-        const teachers = await User.insertMany([
-            {
-                name: 'Pak Ahmad Hidayat',
-                email: 'ahmad.hidayat@sekolah.id',
-                password: teacherPassword,
-                role: 'teacher'
-            },
-            {
-                name: 'Bu Siti Rahayu',
-                email: 'siti.rahayu@sekolah.id',
-                password: teacherPassword,
-                role: 'teacher'
-            }
-        ]);
+        const teacher1 = await User.create({
+            name: 'Pak Ahmad Hidayat',
+            email: 'ahmad.hidayat@sekolah.id',
+            password: 'guru123',
+            role: 'teacher'
+        });
+        const teacher2 = await User.create({
+            name: 'Bu Siti Rahayu',
+            email: 'siti.rahayu@sekolah.id',
+            password: 'guru123',
+            role: 'teacher'
+        });
+        const teachers = [teacher1, teacher2];
         console.log(`✅ Created ${teachers.length} teachers: guru123`);
 
         // Update classes with teacher_id
@@ -90,39 +79,37 @@ const seedDatabase = async () => {
         await Class.findByIdAndUpdate(classes[2]._id, { teacher_id: teachers[0]._id });
         console.log('✅ Teachers assigned to classes');
 
-        // Create Students
+        // Create Students (using create one by one for pre-save hook)
         console.log('👨‍🎓 Creating students...');
-        const studentPassword = await hashPassword('siswa123');
-        const students = await User.insertMany([
-            {
-                name: 'Andi Wijaya',
-                nis: '20250001',
-                password: studentPassword,
-                role: 'student',
-                class_id: classes[0]._id
-            },
-            {
-                name: 'Budi Santoso',
-                nis: '20250002',
-                password: studentPassword,
-                role: 'student',
-                class_id: classes[0]._id
-            },
-            {
-                name: 'Citra Dewi',
-                nis: '20250003',
-                password: studentPassword,
-                role: 'student',
-                class_id: classes[1]._id
-            },
-            {
-                name: 'Dina Putri',
-                nis: '20250004',
-                password: studentPassword,
-                role: 'student',
-                class_id: classes[2]._id
-            }
-        ]);
+        const student1 = await User.create({
+            name: 'Andi Wijaya',
+            nis: '20250001',
+            password: 'siswa123',
+            role: 'student',
+            class_id: classes[0]._id
+        });
+        const student2 = await User.create({
+            name: 'Budi Santoso',
+            nis: '20250002',
+            password: 'siswa123',
+            role: 'student',
+            class_id: classes[0]._id
+        });
+        const student3 = await User.create({
+            name: 'Citra Dewi',
+            nis: '20250003',
+            password: 'siswa123',
+            role: 'student',
+            class_id: classes[1]._id
+        });
+        const student4 = await User.create({
+            name: 'Dina Putri',
+            nis: '20250004',
+            password: 'siswa123',
+            role: 'student',
+            class_id: classes[2]._id
+        });
+        const students = [student1, student2, student3, student4];
         console.log(`✅ Created ${students.length} students: siswa123`);
 
         // Create Activity Reports
