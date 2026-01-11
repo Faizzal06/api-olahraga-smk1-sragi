@@ -1,0 +1,37 @@
+{
+    "name": "tracking-activity-backend",
+    "version": "1.0.0",
+    "description": "Backend API untuk Sistem Tracking Aktivitas Olahraga Sekolah",
+    "main": "src/app.js",
+    "scripts": {
+        "start": "node src/app.js",
+        "dev": "nodemon src/app.js",
+        "seed": "node seeds/seed.js"
+    },
+    "keywords": [
+        "tracking",
+        "activity",
+        "school",
+        "sports",
+        "nodejs",
+        "express",
+        "mongodb"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "exceljs": "^4.4.0",
+        "express": "^4.18.2",
+        "express-rate-limit": "^7.1.5",
+        "express-validator": "^7.0.1",
+        "helmet": "^7.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    }
+}

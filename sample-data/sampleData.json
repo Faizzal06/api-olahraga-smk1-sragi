@@ -1,0 +1,594 @@
+{
+  "metadata": {
+    "description": "Sample data untuk sistem tracking aktivitas olahraga sekolah",
+    "version": "1.0.0",
+    "generated_at": "2026-01-10T11:30:00.000Z",
+    "notes": "Data ini dapat digunakan untuk testing frontend dan sebagai referensi struktur response API"
+  },
+
+  "classes": [
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c001",
+      "class_name": "10 IPA 1",
+      "grade_level": "10",
+      "school_year": "2025/2026",
+      "teacher_id": "65f1a2b3c4d5e6f7a8b9c101",
+      "created_at": "2025-07-15T00:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c002",
+      "class_name": "10 IPA 2",
+      "grade_level": "10",
+      "school_year": "2025/2026",
+      "teacher_id": "65f1a2b3c4d5e6f7a8b9c102",
+      "created_at": "2025-07-15T00:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c003",
+      "class_name": "11 IPA 1",
+      "grade_level": "11",
+      "school_year": "2025/2026",
+      "teacher_id": "65f1a2b3c4d5e6f7a8b9c101",
+      "created_at": "2025-07-15T00:00:00.000Z"
+    }
+  ],
+
+  "users": {
+    "students": [
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c201",
+        "name": "Andi Wijaya",
+        "nis": "20250001",
+        "email": null,
+        "password": "$2b$10$hashedpassword123",
+        "password_plain": "siswa123",
+        "role": "student",
+        "class_id": "65f1a2b3c4d5e6f7a8b9c001",
+        "avatar": "https://i.ibb.co/sample/andi-avatar.jpg",
+        "created_at": "2025-07-20T08:00:00.000Z",
+        "updated_at": "2025-07-20T08:00:00.000Z"
+      },
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c202",
+        "name": "Budi Santoso",
+        "nis": "20250002",
+        "email": null,
+        "password": "$2b$10$hashedpassword123",
+        "password_plain": "siswa123",
+        "role": "student",
+        "class_id": "65f1a2b3c4d5e6f7a8b9c001",
+        "avatar": "https://i.ibb.co/sample/budi-avatar.jpg",
+        "created_at": "2025-07-20T08:00:00.000Z",
+        "updated_at": "2025-07-20T08:00:00.000Z"
+      },
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c203",
+        "name": "Citra Dewi",
+        "nis": "20250003",
+        "email": null,
+        "password": "$2b$10$hashedpassword123",
+        "password_plain": "siswa123",
+        "role": "student",
+        "class_id": "65f1a2b3c4d5e6f7a8b9c002",
+        "avatar": null,
+        "created_at": "2025-07-20T08:00:00.000Z",
+        "updated_at": "2025-07-20T08:00:00.000Z"
+      },
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c204",
+        "name": "Dina Putri",
+        "nis": "20250004",
+        "email": null,
+        "password": "$2b$10$hashedpassword123",
+        "password_plain": "siswa123",
+        "role": "student",
+        "class_id": "65f1a2b3c4d5e6f7a8b9c003",
+        "avatar": null,
+        "created_at": "2025-07-20T08:00:00.000Z",
+        "updated_at": "2025-07-20T08:00:00.000Z"
+      }
+    ],
+    "teachers": [
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c101",
+        "name": "Pak Ahmad Hidayat",
+        "nis": null,
+        "email": "ahmad.hidayat@sekolah.id",
+        "password": "$2b$10$hashedpassword456",
+        "password_plain": "guru123",
+        "role": "teacher",
+        "class_id": null,
+        "avatar": "https://i.ibb.co/sample/ahmad-avatar.jpg",
+        "created_at": "2025-07-15T08:00:00.000Z",
+        "updated_at": "2025-07-15T08:00:00.000Z"
+      },
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c102",
+        "name": "Bu Siti Rahayu",
+        "nis": null,
+        "email": "siti.rahayu@sekolah.id",
+        "password": "$2b$10$hashedpassword456",
+        "password_plain": "guru123",
+        "role": "teacher",
+        "class_id": null,
+        "avatar": null,
+        "created_at": "2025-07-15T08:00:00.000Z",
+        "updated_at": "2025-07-15T08:00:00.000Z"
+      }
+    ],
+    "admins": [
+      {
+        "_id": "65f1a2b3c4d5e6f7a8b9c100",
+        "name": "Administrator",
+        "nis": null,
+        "email": "admin@sekolah.id",
+        "password": "$2b$10$hashedpassword789",
+        "password_plain": "admin123",
+        "role": "admin",
+        "class_id": null,
+        "avatar": null,
+        "created_at": "2025-07-01T00:00:00.000Z",
+        "updated_at": "2025-07-01T00:00:00.000Z"
+      }
+    ]
+  },
+
+  "activityReports": [
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c301",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c201",
+      "student_name": "Andi Wijaya",
+      "activity_type": "pushup",
+      "count": 50,
+      "image_url": "https://i.ibb.co/sample/pushup-proof-1.jpg",
+      "image_proof_id": "abc123xyz001",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c101",
+      "verified_by_name": "Pak Ahmad Hidayat",
+      "verified_at": "2026-01-10T09:30:00.000Z",
+      "notes": "Bagus, terus pertahankan!",
+      "created_at": "2026-01-10T07:15:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c302",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c201",
+      "student_name": "Andi Wijaya",
+      "activity_type": "situp",
+      "count": 40,
+      "image_url": "https://i.ibb.co/sample/situp-proof-1.jpg",
+      "image_proof_id": "abc123xyz002",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "pending",
+      "verified_by": null,
+      "verified_by_name": null,
+      "verified_at": null,
+      "notes": null,
+      "created_at": "2026-01-10T07:20:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c303",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c202",
+      "student_name": "Budi Santoso",
+      "activity_type": "pushup",
+      "count": 35,
+      "image_url": "https://i.ibb.co/sample/pushup-proof-2.jpg",
+      "image_proof_id": "abc123xyz003",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "pending",
+      "verified_by": null,
+      "verified_by_name": null,
+      "verified_at": null,
+      "notes": null,
+      "created_at": "2026-01-10T06:45:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c304",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c202",
+      "student_name": "Budi Santoso",
+      "activity_type": "backup",
+      "count": 25,
+      "image_url": "https://i.ibb.co/sample/backup-proof-1.jpg",
+      "image_proof_id": "abc123xyz004",
+      "report_date": "2026-01-09T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c101",
+      "verified_by_name": "Pak Ahmad Hidayat",
+      "verified_at": "2026-01-09T10:00:00.000Z",
+      "notes": null,
+      "created_at": "2026-01-09T07:30:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c305",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c203",
+      "student_name": "Citra Dewi",
+      "activity_type": "pushup",
+      "count": 20,
+      "image_url": "https://i.ibb.co/sample/pushup-proof-3.jpg",
+      "image_proof_id": "abc123xyz005",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "rejected",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c102",
+      "verified_by_name": "Bu Siti Rahayu",
+      "verified_at": "2026-01-10T08:00:00.000Z",
+      "notes": "Foto tidak jelas, mohon upload ulang",
+      "created_at": "2026-01-10T06:30:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c306",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c203",
+      "student_name": "Citra Dewi",
+      "activity_type": "situp",
+      "count": 30,
+      "image_url": "https://i.ibb.co/sample/situp-proof-2.jpg",
+      "image_proof_id": "abc123xyz006",
+      "report_date": "2026-01-09T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c102",
+      "verified_by_name": "Bu Siti Rahayu",
+      "verified_at": "2026-01-09T11:00:00.000Z",
+      "notes": "Mantap!",
+      "created_at": "2026-01-09T08:15:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c307",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c204",
+      "student_name": "Dina Putri",
+      "activity_type": "pushup",
+      "count": 45,
+      "image_url": "https://i.ibb.co/sample/pushup-proof-4.jpg",
+      "image_proof_id": "abc123xyz007",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "pending",
+      "verified_by": null,
+      "verified_by_name": null,
+      "verified_at": null,
+      "notes": null,
+      "created_at": "2026-01-10T07:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c308",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c204",
+      "student_name": "Dina Putri",
+      "activity_type": "situp",
+      "count": 35,
+      "image_url": "https://i.ibb.co/sample/situp-proof-3.jpg",
+      "image_proof_id": "abc123xyz008",
+      "report_date": "2026-01-10T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c101",
+      "verified_by_name": "Pak Ahmad Hidayat",
+      "verified_at": "2026-01-10T08:45:00.000Z",
+      "notes": null,
+      "created_at": "2026-01-10T07:05:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c309",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c201",
+      "student_name": "Andi Wijaya",
+      "activity_type": "backup",
+      "count": 30,
+      "image_url": "https://i.ibb.co/sample/backup-proof-2.jpg",
+      "image_proof_id": "abc123xyz009",
+      "report_date": "2026-01-09T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c101",
+      "verified_by_name": "Pak Ahmad Hidayat",
+      "verified_at": "2026-01-09T09:00:00.000Z",
+      "notes": "Good job!",
+      "created_at": "2026-01-09T06:50:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c310",
+      "student_id": "65f1a2b3c4d5e6f7a8b9c202",
+      "student_name": "Budi Santoso",
+      "activity_type": "situp",
+      "count": 28,
+      "image_url": "https://i.ibb.co/sample/situp-proof-4.jpg",
+      "image_proof_id": "abc123xyz010",
+      "report_date": "2026-01-08T00:00:00.000Z",
+      "status": "verified",
+      "verified_by": "65f1a2b3c4d5e6f7a8b9c101",
+      "verified_by_name": "Pak Ahmad Hidayat",
+      "verified_at": "2026-01-08T10:30:00.000Z",
+      "notes": null,
+      "created_at": "2026-01-08T07:00:00.000Z"
+    }
+  ],
+
+  "announcements": [
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c401",
+      "title": "Jadwal Pengumpulan Laporan Aktivitas Mingguan",
+      "content": "Kepada seluruh siswa kelas 10 IPA 1,\n\nMohon untuk rutin mengumpulkan laporan aktivitas olahraga setiap hari sebelum pukul 20:00 WIB. Laporan yang dikumpulkan setelah batas waktu akan diproses keesokan harinya.\n\nTerima kasih atas kerjasamanya.",
+      "author_id": "65f1a2b3c4d5e6f7a8b9c101",
+      "author_name": "Pak Ahmad Hidayat",
+      "target_type": "class",
+      "target_class_id": "65f1a2b3c4d5e6f7a8b9c001",
+      "target_class_name": "10 IPA 1",
+      "attachment_url": null,
+      "is_published": true,
+      "created_at": "2026-01-08T08:00:00.000Z",
+      "updated_at": "2026-01-08T08:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c402",
+      "title": "Pengumuman: Lomba Kebugaran Antar Kelas",
+      "content": "Dalam rangka memperingati Hari Olahraga Nasional, sekolah akan mengadakan Lomba Kebugaran Antar Kelas pada tanggal 15 Januari 2026.\n\nKategori lomba:\n1. Push-up terbanyak\n2. Sit-up terbanyak\n3. Back-up terbanyak\n\nSetiap kelas akan diwakili oleh 3 siswa terbaik berdasarkan data aktivitas mingguan.\n\nPersiapkan diri kalian dengan baik!",
+      "author_id": "65f1a2b3c4d5e6f7a8b9c101",
+      "author_name": "Pak Ahmad Hidayat",
+      "target_type": "all",
+      "target_class_id": null,
+      "target_class_name": null,
+      "attachment_url": "https://i.ibb.co/sample/poster-lomba.jpg",
+      "is_published": true,
+      "created_at": "2026-01-05T10:00:00.000Z",
+      "updated_at": "2026-01-05T10:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c403",
+      "title": "Reminder: Upload Bukti Aktivitas dengan Jelas",
+      "content": "Perhatian untuk seluruh siswa,\n\nMohon pastikan foto bukti aktivitas yang di-upload memenuhi kriteria berikut:\n1. Foto jelas dan tidak blur\n2. Terlihat wajah dan aktivitas yang dilakukan\n3. Format file: JPG, PNG, atau JPEG\n4. Ukuran maksimal: 5MB\n\nLaporan dengan foto yang tidak jelas akan ditolak.",
+      "author_id": "65f1a2b3c4d5e6f7a8b9c102",
+      "author_name": "Bu Siti Rahayu",
+      "target_type": "all",
+      "target_class_id": null,
+      "target_class_name": null,
+      "attachment_url": null,
+      "is_published": true,
+      "created_at": "2026-01-03T09:00:00.000Z",
+      "updated_at": "2026-01-03T09:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c404",
+      "title": "Selamat kepada Siswa Teraktif Minggu Ini!",
+      "content": "Selamat kepada siswa-siswa yang telah menunjukkan konsistensi luar biasa dalam aktivitas olahraga minggu ini:\n\n🥇 Andi Wijaya - 10 IPA 1 (Total: 120 aktivitas)\n🥈 Dina Putri - 11 IPA 1 (Total: 115 aktivitas)\n🥉 Budi Santoso - 10 IPA 1 (Total: 88 aktivitas)\n\nPertahankan semangat kalian!",
+      "author_id": "65f1a2b3c4d5e6f7a8b9c101",
+      "author_name": "Pak Ahmad Hidayat",
+      "target_type": "all",
+      "target_class_id": null,
+      "target_class_name": null,
+      "attachment_url": null,
+      "is_published": true,
+      "created_at": "2026-01-06T14:00:00.000Z",
+      "updated_at": "2026-01-06T14:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c405",
+      "title": "Jadwal Konsultasi Guru Olahraga",
+      "content": "Untuk siswa kelas 10 IPA 2 yang membutuhkan konsultasi terkait teknik olahraga yang benar, silakan menemui Bu Siti Rahayu pada:\n\nHari: Senin - Rabu\nWaktu: 14:00 - 15:00 WIB\nTempat: Ruang Guru Olahraga\n\nKonsultasi bersifat opsional namun sangat direkomendasikan.",
+      "author_id": "65f1a2b3c4d5e6f7a8b9c102",
+      "author_name": "Bu Siti Rahayu",
+      "target_type": "class",
+      "target_class_id": "65f1a2b3c4d5e6f7a8b9c002",
+      "target_class_name": "10 IPA 2",
+      "attachment_url": null,
+      "is_published": true,
+      "created_at": "2026-01-07T11:00:00.000Z",
+      "updated_at": "2026-01-07T11:00:00.000Z"
+    }
+  ],
+
+  "announcementReads": [
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c501",
+      "announcement_id": "65f1a2b3c4d5e6f7a8b9c401",
+      "user_id": "65f1a2b3c4d5e6f7a8b9c201",
+      "read_at": "2026-01-08T08:30:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c502",
+      "announcement_id": "65f1a2b3c4d5e6f7a8b9c401",
+      "user_id": "65f1a2b3c4d5e6f7a8b9c202",
+      "read_at": "2026-01-08T09:15:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c503",
+      "announcement_id": "65f1a2b3c4d5e6f7a8b9c402",
+      "user_id": "65f1a2b3c4d5e6f7a8b9c201",
+      "read_at": "2026-01-05T12:00:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c504",
+      "announcement_id": "65f1a2b3c4d5e6f7a8b9c402",
+      "user_id": "65f1a2b3c4d5e6f7a8b9c203",
+      "read_at": "2026-01-05T14:30:00.000Z"
+    },
+    {
+      "_id": "65f1a2b3c4d5e6f7a8b9c505",
+      "announcement_id": "65f1a2b3c4d5e6f7a8b9c403",
+      "user_id": "65f1a2b3c4d5e6f7a8b9c204",
+      "read_at": "2026-01-03T10:00:00.000Z"
+    }
+  ],
+
+  "apiResponses": {
+    "login": {
+      "success": {
+        "success": true,
+        "message": "Login berhasil",
+        "data": {
+          "user": {
+            "_id": "65f1a2b3c4d5e6f7a8b9c201",
+            "name": "Andi Wijaya",
+            "nis": "20250001",
+            "email": null,
+            "role": "student",
+            "class_id": {
+              "_id": "65f1a2b3c4d5e6f7a8b9c001",
+              "class_name": "10 IPA 1",
+              "grade_level": "10",
+              "school_year": "2025/2026"
+            },
+            "avatar": "https://i.ibb.co/sample/andi-avatar.jpg"
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYxYTJiM2M0ZDVlNmY3YThiOWMyMDEiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTcwNDg3MDAwMH0.sample_signature"
+        }
+      },
+      "error": {
+        "success": false,
+        "message": "NIS atau password salah",
+        "error": "INVALID_CREDENTIALS"
+      }
+    },
+
+    "dashboardStudent": {
+      "success": true,
+      "data": {
+        "user": {
+          "_id": "65f1a2b3c4d5e6f7a8b9c201",
+          "name": "Andi Wijaya",
+          "class_name": "10 IPA 1"
+        },
+        "todayActivities": [
+          {
+            "activity_type": "pushup",
+            "count": 50,
+            "status": "verified"
+          },
+          {
+            "activity_type": "situp",
+            "count": 40,
+            "status": "pending"
+          }
+        ],
+        "weeklyStats": {
+          "totalActivities": 8,
+          "totalPushup": 100,
+          "totalSitup": 80,
+          "totalBackup": 60,
+          "verifiedCount": 6,
+          "pendingCount": 2,
+          "rejectedCount": 0
+        },
+        "recentAnnouncements": [
+          {
+            "_id": "65f1a2b3c4d5e6f7a8b9c401",
+            "title": "Jadwal Pengumpulan Laporan Aktivitas Mingguan",
+            "created_at": "2026-01-08T08:00:00.000Z",
+            "is_read": true
+          }
+        ]
+      }
+    },
+
+    "dashboardTeacher": {
+      "success": true,
+      "data": {
+        "user": {
+          "_id": "65f1a2b3c4d5e6f7a8b9c101",
+          "name": "Pak Ahmad Hidayat"
+        },
+        "classes": [
+          {
+            "_id": "65f1a2b3c4d5e6f7a8b9c001",
+            "class_name": "10 IPA 1",
+            "student_count": 2
+          },
+          {
+            "_id": "65f1a2b3c4d5e6f7a8b9c003",
+            "class_name": "11 IPA 1",
+            "student_count": 1
+          }
+        ],
+        "pendingReports": {
+          "total": 4,
+          "reports": [
+            {
+              "_id": "65f1a2b3c4d5e6f7a8b9c302",
+              "student_name": "Andi Wijaya",
+              "class_name": "10 IPA 1",
+              "activity_type": "situp",
+              "count": 40,
+              "created_at": "2026-01-10T07:20:00.000Z"
+            }
+          ]
+        },
+        "todayStats": {
+          "totalReports": 6,
+          "verified": 2,
+          "pending": 3,
+          "rejected": 1
+        },
+        "weeklyStats": {
+          "totalActivities": 25,
+          "averagePerStudent": 8.3
+        }
+      }
+    },
+
+    "dashboardAdmin": {
+      "success": true,
+      "data": {
+        "overview": {
+          "totalStudents": 4,
+          "totalTeachers": 2,
+          "totalClasses": 3,
+          "totalActivities": 10
+        },
+        "activityStats": {
+          "today": 6,
+          "thisWeek": 10,
+          "thisMonth": 10
+        },
+        "statusDistribution": {
+          "pending": 3,
+          "verified": 6,
+          "rejected": 1
+        },
+        "topActiveClasses": [
+          {
+            "class_name": "10 IPA 1",
+            "total_activities": 6
+          },
+          {
+            "class_name": "11 IPA 1",
+            "total_activities": 2
+          },
+          {
+            "class_name": "10 IPA 2",
+            "total_activities": 2
+          }
+        ]
+      }
+    },
+
+    "activitiesList": {
+      "success": true,
+      "data": {
+        "activities": [
+          {
+            "_id": "65f1a2b3c4d5e6f7a8b9c301",
+            "student": {
+              "_id": "65f1a2b3c4d5e6f7a8b9c201",
+              "name": "Andi Wijaya",
+              "nis": "20250001",
+              "class": {
+                "_id": "65f1a2b3c4d5e6f7a8b9c001",
+                "class_name": "10 IPA 1"
+              }
+            },
+            "activity_type": "pushup",
+            "count": 50,
+            "image_url": "https://i.ibb.co/sample/pushup-proof-1.jpg",
+            "report_date": "2026-01-10T00:00:00.000Z",
+            "status": "verified",
+            "verified_by": {
+              "_id": "65f1a2b3c4d5e6f7a8b9c101",
+              "name": "Pak Ahmad Hidayat"
+            },
+            "verified_at": "2026-01-10T09:30:00.000Z",
+            "notes": "Bagus, terus pertahankan!",
+            "created_at": "2026-01-10T07:15:00.000Z"
+          }
+        ],
+        "pagination": {
+          "currentPage": 1,
+          "totalPages": 1,
+          "totalItems": 10,
+          "itemsPerPage": 20
+        }
+      }
+    }
+  }
+}
