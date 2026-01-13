@@ -17,6 +17,7 @@ const {
 } = require('./errorHandler');
 const validate = require('./validate');
 const { logger, simpleLogger } = require('./logger');
+const { handleUpload, uploadSingleImage } = require('./fileUpload');
 
 module.exports = {
     auth,
@@ -35,5 +36,7 @@ module.exports = {
     AppError,
     validate,
     logger,
-    simpleLogger
+    simpleLogger,
+    handleUpload,
+    uploadSingleImage
 };

@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const { activityController } = require('../controllers');
-const { auth, isStudent, isTeacher, isTeacherOrAdmin } = require('../middleware');
+const { auth, isStudent, isTeacher, isTeacherOrAdmin, handleUpload } = require('../middleware');
 const validate = require('../middleware/validate');
 const { activityValidators } = require('../utils/validators');
 
 /**
  * @route   POST /api/activities
- * @desc    Create activity report
+ * @desc    Create activity report (dengan upload gambar)
  * @access  Student
  */
-router.post('/', auth, isStudent, activityValidators.create, validate, activityController.createActivity);
+router.post('/', auth, isStudent, handleUpload, activityValidators.create, validate, activityController.createActivity);
 
 /**
  * @route   GET /api/activities

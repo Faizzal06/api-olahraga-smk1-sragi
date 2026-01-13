@@ -8,6 +8,7 @@ const {
     getTodayRange,
     getDateRange
 } = require('../utils/helpers');
+const { uploadImage, deleteImage } = require('../utils/uploadService');
 
 /**
  * @desc    Create activity report
@@ -15,8 +16,18 @@ const {
  * @access  Student
  */
 const createActivity = asyncHandler(async (req, res) => {
-    const { activity_type, count, image_url, image_proof_id, report_date } = req.body;
+    const { activity_type, count, report_date } = req.body;
     const student_id = req.user._id;
+
+    // Validasi file gambar
+    if (!req.file) {
+        return errorResponse(
+            res,
+            400,
+            'File gambar bukti wajib diupload',
+            'IMAGE_REQUIRED'
+        );
+    }
 
     // Set report date (default hari ini)
     const reportDate = report_date ? new Date(report_date) : new Date();
@@ -38,12 +49,15 @@ const createActivity = asyncHandler(async (req, res) => {
         );
     }
 
+    // Upload gambar ke Cloudinary
+    const uploadResult = await uploadImage(req.file);
+
     const activity = await ActivityReport.create({
         student_id,
         activity_type,
         count,
-        image_url,
-        image_proof_id,
+        image_url: uploadResult.url,
+        image_proof_id: uploadResult.public_id,
         report_date: reportDate,
         status: 'pending'
     });
@@ -307,6 +321,11 @@ const deleteActivity = asyncHandler(async (req, res) => {
                 'CANNOT_DELETE_VERIFIED'
             );
         }
+    }
+
+    // Hapus gambar dari Cloudinary
+    if (activity.image_proof_id) {
+        await deleteImage(activity.image_proof_id);
     }
 
     await ActivityReport.findByIdAndDelete(req.params.id);

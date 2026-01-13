@@ -152,14 +152,7 @@ const activityValidators = {
         body('count')
             .isInt({ min: 1 })
             .withMessage('Jumlah aktivitas minimal 1'),
-        body('image_url')
-            .notEmpty()
-            .withMessage('URL gambar bukti wajib diisi')
-            .isURL()
-            .withMessage('URL gambar tidak valid'),
-        body('image_proof_id')
-            .notEmpty()
-            .withMessage('ID gambar bukti wajib diisi'),
+        // image_url dan image_proof_id tidak perlu validasi karena file upload ditangani oleh multer
         body('report_date')
             .optional()
             .isISO8601()
